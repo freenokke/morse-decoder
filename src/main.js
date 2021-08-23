@@ -38,6 +38,8 @@ const MORSE_TABLE = {
     '**********': ' ',
 };
 
+const expr = "0000000010**********0000111010101010111100111011100000001011111110101011111010101010101010";
+
 function decode(expr) {
     exprToArr = expr.split('');
     finalArr = [];
@@ -54,9 +56,10 @@ function decode(expr) {
 
     finalArr.forEach((item) => {
         newStr = item.replace(/10/g, '.').replace(/11/g, '-').replace(/0/g, '');
-        // console.log(newStr);
+        console.log(newStr);
         morseArr.push(newStr);
     });
+    console.log(morseArr)
 
     let resultArr = [];
 
@@ -66,6 +69,4 @@ function decode(expr) {
     return resultArr;
 }
 
-module.exports = {
-    decode
-}
+console.log(decode(expr))
